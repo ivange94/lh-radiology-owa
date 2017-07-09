@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { BrandComponent } from './header/brand/brand.component';
+import { BrandComponent } from './brand/brand.component';
 
 @NgModule({
   declarations: [
