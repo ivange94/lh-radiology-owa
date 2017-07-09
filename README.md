@@ -1,6 +1,8 @@
-# LhRadiologyOwa
+# LibreHealth Radiology Open Webapp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.0.
+
+This will be the new UI for the Radiology module. It's an Angular 2 Open Web App project.
 
 ## Development server
 
