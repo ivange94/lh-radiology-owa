@@ -2,7 +2,7 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.0.
 
-This will be the new UI for the Radiology module. It's an Angular 2 Open Web App project.
+This will be the new UI for the Radiology module. It's an Angular 2 project built with Open Web App standards.
 
 ## Development server
 
