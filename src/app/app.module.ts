@@ -8,6 +8,7 @@ import { HeaderComponent } from './header/header.component';
 import { BrandComponent } from './brand/brand.component';
 import { FooterComponent } from './footer/footer.component';
 import { ReportEditorComponent } from './report-editor/report-editor.component';
+import { ReportsInfoComponent } from './reports-info/reports-info.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { ReportEditorComponent } from './report-editor/report-editor.component';
     HeaderComponent,
     BrandComponent,
     FooterComponent,
-    ReportEditorComponent
+    ReportEditorComponent,
+    ReportsInfoComponent
   ],
   imports: [
     BrowserModule,
