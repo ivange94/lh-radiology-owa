@@ -10,6 +10,7 @@ import { FooterComponent } from './footer/footer.component';
 import { ReportEditorComponent } from './report-editor/report-editor.component';
 import { ReportsInfoComponent } from './reports-info/reports-info.component';
 import { ReportMetadataComponent } from './report-metadata/report-metadata.component';
+import { ReportActionsComponent } from './report-actions/report-actions.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ReportMetadataComponent } from './report-metadata/report-metadata.compo
     FooterComponent,
     ReportEditorComponent,
     ReportsInfoComponent,
-    ReportMetadataComponent
+    ReportMetadataComponent,
+    ReportActionsComponent
   ],
   imports: [
     BrowserModule,
