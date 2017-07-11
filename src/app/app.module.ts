@@ -11,6 +11,7 @@ import { ReportEditorComponent } from './report-editor/report-editor.component';
 import { ReportsInfoComponent } from './reports-info/reports-info.component';
 import { ReportMetadataComponent } from './report-metadata/report-metadata.component';
 import { ReportActionsComponent } from './report-actions/report-actions.component';
+import { ReportAuthoringComponent } from './report-authoring/report-authoring.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ReportActionsComponent } from './report-actions/report-actions.componen
     ReportEditorComponent,
     ReportsInfoComponent,
     ReportMetadataComponent,
-    ReportActionsComponent
+    ReportActionsComponent,
+    ReportAuthoringComponent
   ],
   imports: [
     BrowserModule,
