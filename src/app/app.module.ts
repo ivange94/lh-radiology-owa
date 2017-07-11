@@ -9,6 +9,7 @@ import { BrandComponent } from './brand/brand.component';
 import { FooterComponent } from './footer/footer.component';
 import { ReportEditorComponent } from './report-editor/report-editor.component';
 import { ReportsInfoComponent } from './reports-info/reports-info.component';
+import { ReportMetadataComponent } from './report-metadata/report-metadata.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ReportsInfoComponent } from './reports-info/reports-info.component';
     BrandComponent,
     FooterComponent,
     ReportEditorComponent,
-    ReportsInfoComponent
+    ReportsInfoComponent,
+    ReportMetadataComponent
   ],
   imports: [
     BrowserModule,
