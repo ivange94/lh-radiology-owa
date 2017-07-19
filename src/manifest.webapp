@@ -1,0 +1,19 @@
+{
+  "version": "0.1.0",
+  "name": "LibreHealth Radiology",
+  "description": "LibreHealth Radiology App",
+  "launch_path": "index.html",
+  "icons": {
+    "48": "/assets/logo.png"
+  },
+  "developer": {
+    "name": "Ivange Larry (ivange94)",
+    "url": "https://github.com/ivange94/lh-radiology-owa"
+  },
+  "default_locale": "en",
+  "activities": {
+    "openmrs": {
+      "href": "*"
+    }
+  }
+}
