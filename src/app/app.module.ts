@@ -4,21 +4,21 @@ import { TinymceModule } from 'angular2-tinymce';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { BrandComponent } from './brand/brand.component';
-import { FooterComponent } from './footer/footer.component';
-import { ReportEditorComponent } from './report-editor/report-editor.component';
-import { ReportsInfoComponent } from './reports-info/reports-info.component';
-import { ReportMetadataComponent } from './report-metadata/report-metadata.component';
-import { ReportActionsComponent } from './report-actions/report-actions.component';
-import { ReportAuthoringComponent } from './report-authoring/report-authoring.component';
-import { OrdersComponent } from './orders/orders.component';
+import { HeaderComponent } from './components/header/header.component';
+import { BrandComponent } from './components/brand/brand.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { ReportEditorComponent } from './components/report-editor/report-editor.component';
+import { ReportsInfoComponent } from './components/reports-info/reports-info.component';
+import { ReportMetadataComponent } from './components/report-metadata/report-metadata.component';
+import { ReportActionsComponent } from './components/report-actions/report-actions.component';
+import { ReportAuthoringComponent } from './components/report-authoring/report-authoring.component';
+import { OrdersComponent } from './components/orders/orders.component';
 import {AppRoutingModule} from "./app-routing.module";
-import { ReportsComponent } from './reports/reports.component';
-import { ReportTemplatesComponent } from './report-templates/report-templates.component';
-import { AddOrderComponent } from './orders/add-order/add-order.component';
-import {DashboardComponent} from "./dashboard.component";
-import { SigninComponent } from './signin/signin.component';
+import { ReportsComponent } from './components/reports/reports.component';
+import { ReportTemplatesComponent } from './components/report-templates/report-templates.component';
+import { AddOrderComponent } from './components/orders/add-order/add-order.component';
+import {DashboardComponent} from "./components/dashboard/dashboard.component";
+import { SigninComponent } from './components/signin/signin.component';
 
 @NgModule({
   declarations: [

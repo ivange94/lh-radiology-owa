@@ -1,13 +1,13 @@
 import {NgModule} from "@angular/core";
 import {RouterModule, Routes} from "@angular/router";
 
-import { OrdersComponent } from './orders/orders.component';
-import { ReportsComponent } from './reports/reports.component';
-import { ReportTemplatesComponent } from './report-templates/report-templates.component';
-import { AddOrderComponent } from './orders/add-order/add-order.component';
-import { DashboardComponent } from './dashboard.component';
-import { SigninComponent } from './signin/signin.component';
-import { ReportAuthoringComponent } from './report-authoring/report-authoring.component'
+import { OrdersComponent } from './components/orders/orders.component';
+import { ReportsComponent } from './components/reports/reports.component';
+import { ReportTemplatesComponent } from './components/report-templates/report-templates.component';
+import { AddOrderComponent } from './components/orders/add-order/add-order.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { SigninComponent } from './components/signin/signin.component';
+import { ReportAuthoringComponent } from './components/report-authoring/report-authoring.component'
 
 const routes: Routes = [
   {path: '', redirectTo: 'dashboard/orders', pathMatch: 'full'},
