@@ -24,12 +24,17 @@
       <h3 class="panel-title">Report</h3>
     </div>
     <div class="panel-body">
-      <div class="reportType">
-        <span>Report Type</span>
-        <select name="reportType" id="reportType">
-          <option value="FREE">Free Text</option>
-          <option value="MRRT">MRRT Report</option>
-        </select>
+      <label for="reportType">Report Type</label>
+      <select name="reportType" id="reportType" #box (change)="0">
+        <option value="FREE">Free Text Report</option>
+        <option value="MRRT">MRRT Report</option>
+      </select>
+      <div *ngIf="box.value === 'MRRT'">
+        <label for="reportTemplate">Report Template</label>
+        <input type="text" id="reportTemplate">
+      </div>
+      <div>
+        <a class="btn btn-default claim-report-btn" [routerLink]="['/add-report']">Claim Report</a>
       </div>
     </div>
   </div>

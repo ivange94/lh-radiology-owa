@@ -23,7 +23,7 @@ const routes: Routes = [
   {path: 'signin', component: SigninComponent},
   {path: 'add-report', component: ReportAuthoringComponent},
   {path: 'app/orders/:id', component: OrderDetailComponent}
-]
+  ]
 
 @NgModule({
   imports: [ RouterModule.forRoot(routes)],

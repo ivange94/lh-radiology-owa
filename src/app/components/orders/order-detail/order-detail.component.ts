@@ -13,7 +13,7 @@ import {Order} from "../../../models/order";
 })
 export class OrderDetailComponent implements OnInit {
 
-  order: Order
+  order: Order;
 
   constructor(
     private orderService: OrderService,
@@ -27,4 +27,7 @@ export class OrderDetailComponent implements OnInit {
       .subscribe(order => this.order = order);
   }
 
+  onChange(value: string) {
+    console.log(value);
+  }
 }
