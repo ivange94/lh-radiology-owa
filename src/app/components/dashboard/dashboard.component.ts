@@ -2,7 +2,7 @@ import {Component} from "@angular/core";
 
 @Component({
   selector: 'app-dashboard',
-  template: `
+  template: `    
     <div class="container">
       <ul class="nav nav-tabs">
         <li role="presentation" [routerLinkActive]="['active']"><a [routerLink]="['orders']">Orders</a></li>

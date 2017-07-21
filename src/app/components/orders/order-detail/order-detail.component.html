@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Radiology Order</h3>
+    </div>
+    <div class="panel-body">
+      <p><strong>Accession Number</strong> {{order.accessionNumber}}</p>
+      <p><strong>Imaging Procedure</strong> </p>
+      <p><strong>Reason (Coded</strong>)	</p>
+      <p><strong>Reason (Free Text)</strong>	{{order.orderReasonNonCoded}}</p>
+      <p><strong>Clinical History</strong>	</p>
+      <p><strong>Orderer</strong> </p>
+      <p><strong>Urgency</strong> {{order.urgency}}</p>
+      <p><strong>Scheduled Date</strong> {{order.dateActivated}}</p>
+      <p><strong>Stop Date</strong> {{order.dateStopped}}</p>
+      <p><strong>Performed status</strong> </p>
+      <p><strong>Instructions</strong> </p>
+      <p><strong>Created By</strong> </p>
+      <p><strong>Study Results</strong> </p>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Report</h3>
+    </div>
+    <div class="panel-body">
+      <div class="reportType">
+        <span>Report Type</span>
+        <select name="reportType" id="reportType">
+          <option value="FREE">Free Text</option>
+          <option value="MRRT">MRRT Report</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>

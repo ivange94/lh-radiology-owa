@@ -8,10 +8,11 @@ import { AddOrderComponent } from './components/orders/add-order/add-order.compo
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { SigninComponent } from './components/signin/signin.component';
 import { ReportAuthoringComponent } from './components/report-authoring/report-authoring.component'
+import { OrderDetailComponent } from './components/orders/order-detail/order-detail.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: 'dashboard/orders', pathMatch: 'full'},
-  {path: 'dashboard', component: DashboardComponent, children: [
+  {path: '', redirectTo: 'app/orders', pathMatch: 'full'},
+  {path: 'app', component: DashboardComponent, children: [
     {path: 'orders', component: OrdersComponent, children: [
 
     ]},
@@ -20,7 +21,8 @@ const routes: Routes = [
   ]},
   {path: 'add-order', component: AddOrderComponent},
   {path: 'signin', component: SigninComponent},
-  {path: 'add-report', component: ReportAuthoringComponent}
+  {path: 'add-report', component: ReportAuthoringComponent},
+  {path: 'app/orders/:id', component: OrderDetailComponent}
 ]
 
 @NgModule({

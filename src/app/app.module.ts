@@ -13,12 +13,14 @@ import { ReportMetadataComponent } from './components/report-metadata/report-met
 import { ReportActionsComponent } from './components/report-actions/report-actions.component';
 import { ReportAuthoringComponent } from './components/report-authoring/report-authoring.component';
 import { OrdersComponent } from './components/orders/orders.component';
-import {AppRoutingModule} from "./app-routing.module";
+import { AppRoutingModule } from "./app-routing.module";
 import { ReportsComponent } from './components/reports/reports.component';
 import { ReportTemplatesComponent } from './components/report-templates/report-templates.component';
 import { AddOrderComponent } from './components/orders/add-order/add-order.component';
-import {DashboardComponent} from "./components/dashboard/dashboard.component";
+import { DashboardComponent } from "./components/dashboard/dashboard.component";
 import { SigninComponent } from './components/signin/signin.component';
+import { OrderService } from "./services/order.service";
+import { OrderDetailComponent } from './components/orders/order-detail/order-detail.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,8 @@ import { SigninComponent } from './components/signin/signin.component';
     ReportTemplatesComponent,
     AddOrderComponent,
     DashboardComponent,
-    SigninComponent
+    SigninComponent,
+    OrderDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +47,7 @@ import { SigninComponent } from './components/signin/signin.component';
     FormsModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [OrderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -13,16 +13,15 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>1</td>
-      <td>John Doe</td>
+    <tr *ngFor="let order of orders">
+      <td>{{order.accessionNumber}}</td>
+      <td>Order.Patient.display</td>
       <td>Routine</td>
       <td>X-RAY</td>
+      <td>Dr Smith</td>
+      <td>09-01-2017</td>
       <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td><a [routerLink]="['/app/orders', order.accessionNumber]"><span class="glyphicon glyphicon-eye-open"></span></a></td>
     </tr>
   </tbody>
 </table>
-

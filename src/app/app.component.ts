@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {reject} from "q";
 
 @Component({
   selector: 'app-root',
