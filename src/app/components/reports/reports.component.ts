@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {ReportService} from "../../services/report.service";
+import {Report} from "../../models/report";
 
 @Component({
   selector: 'app-reports',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReportsComponent implements OnInit {
 
-  constructor() { }
+  reports: Report[];
+
+  constructor(
+    private reportService: ReportService
+  ) { }
 
   ngOnInit() {
+    this.reportService.getReports().then(reports => this.reports = reports);
   }
 
 }

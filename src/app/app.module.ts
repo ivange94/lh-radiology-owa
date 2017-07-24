@@ -21,6 +21,7 @@ import { DashboardComponent } from "./components/dashboard/dashboard.component";
 import { SigninComponent } from './components/signin/signin.component';
 import { OrderService } from "./services/order.service";
 import { OrderDetailComponent } from './components/orders/order-detail/order-detail.component';
+import {ReportService} from "./services/report.service";
 
 @NgModule({
   declarations: [
@@ -47,7 +48,7 @@ import { OrderDetailComponent } from './components/orders/order-detail/order-det
     FormsModule,
     AppRoutingModule
   ],
-  providers: [OrderService],
+  providers: [OrderService, ReportService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
