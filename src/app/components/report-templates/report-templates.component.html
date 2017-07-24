@@ -1,4 +1,17 @@
-<a class="btn btn-primary new-template">New Template</a>
+<a class="btn btn-primary new-template" (click)="modal.open()">Import Report Template</a>
+
+<modal #modal>
+  <modal-header [show-close]="true">
+    <h4 class="modal-title">Import New Template</h4>
+  </modal-header>
+  <modal-body>
+    <form>
+      <input type="file"><br>
+      <input type="submit" value="Upload" (click)="modal.close()">
+    </form>
+  </modal-body><!--
+  <modal-footer [show-default-buttons]="true"></modal-footer>-->
+</modal>
 <table class="table table-striped table-hover">
   <thead>
   <tr>
@@ -10,6 +23,12 @@
   </tr>
   </thead>
   <tbody>
-
+    <tr *ngFor="let template of reportTemplates">
+      <td>{{template.templateId}}</td>
+      <td>{{template.dcTermsTitle}}</td>
+      <td>{{template.dcTermsCreator}}</td>
+      <td>{{template.dcTermsPublisher}}</td>
+      <td><a><span class="glyphicon glyphicon-eye-open"></span></a></td>
+    </tr>
   </tbody>
 </table>

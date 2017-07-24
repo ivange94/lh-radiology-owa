@@ -2,6 +2,7 @@ import {Order} from "./models/order";
 import {Report} from "./models/report";
 import {User} from "./models/user";
 import {Patient} from "./models/patient";
+import {ReportTemplate} from "./models/report-template";
 
 const order1: Order = {
   uuid: '1b0c7f94-30d0-4256-abdd-b027adf89a5d',
@@ -87,6 +88,25 @@ export var reports: Report[] = [
     body: '<h1>Broken bones</h1>',
     display: '',
     void: false
+  }
+];
+
+export var reportTemplates: ReportTemplate[] = [
+  {
+    uuid: '6f11c37a-7084-4248-a7e8-cfce9b7887be',
+    templateId: '1',
+    dcTermsIdentifier: '123',
+    dcTermsTitle: 'My test report template',
+    dcTermsDescription: '',
+    dcTermsType: '',
+    dcTermsLanguage: 'en',
+    dcTermsPublisher: '',
+    dcTermsCreator: 'ivange94',
+    dcTermsRights: '',
+    dcTermsLicense: '',
+    dcTermsDate: new Date(),
+    terms: '',
+    display: ''
   }
 ];
 

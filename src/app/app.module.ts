@@ -22,6 +22,8 @@ import { SigninComponent } from './components/signin/signin.component';
 import { OrderService } from "./services/order.service";
 import { OrderDetailComponent } from './components/orders/order-detail/order-detail.component';
 import {ReportService} from "./services/report.service";
+import {Ng2Bs3ModalModule} from "ng2-bs3-modal/ng2-bs3-modal";
+import {ReportTemplateService} from "./services/report-template.service";
 
 @NgModule({
   declarations: [
@@ -46,9 +48,10 @@ import {ReportService} from "./services/report.service";
     BrowserModule,
     TinymceModule.withConfig({}),
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    Ng2Bs3ModalModule
   ],
-  providers: [OrderService, ReportService],
+  providers: [OrderService, ReportService, ReportTemplateService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
