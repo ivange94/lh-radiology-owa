@@ -1,3 +1,7 @@
 span.required {
   color: red;
 }
+
+.add-order {
+  width: 80%;
+}

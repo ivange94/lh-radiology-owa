@@ -11,19 +11,17 @@ import { ReportAuthoringComponent } from './components/report-authoring/report-a
 import { OrderDetailComponent } from './components/orders/order-detail/order-detail.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: 'app/orders', pathMatch: 'full'},
-  {path: 'app', component: DashboardComponent, children: [
-    {path: 'orders', component: OrdersComponent, children: [
-
-    ]},
+  {path: '', redirectTo: 'dashboard/orders', pathMatch: 'full'},
+  {path: 'dashboard', component: DashboardComponent, children: [
+    {path: '', redirectTo: 'orders', pathMatch: 'full'},
+    {path: 'orders', component: OrdersComponent},
     {path: 'reports', component: ReportsComponent},
-    {path: 'templates', component: ReportTemplatesComponent}
+    {path: 'templates', component: ReportTemplatesComponent},
   ]},
-  {path: 'add-order', component: AddOrderComponent},
   {path: 'signin', component: SigninComponent},
   {path: 'add-report', component: ReportAuthoringComponent},
-  {path: 'app/orders/:id', component: OrderDetailComponent}
-  ]
+  {path: 'orders/:id', component: OrderDetailComponent}
+]
 
 @NgModule({
   imports: [ RouterModule.forRoot(routes)],

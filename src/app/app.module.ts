@@ -24,6 +24,7 @@ import { OrderDetailComponent } from './components/orders/order-detail/order-det
 import {ReportService} from "./services/report.service";
 import {Ng2Bs3ModalModule} from "ng2-bs3-modal/ng2-bs3-modal";
 import {ReportTemplateService} from "./services/report-template.service";
+import {OrdersTableComponent} from "./components/orders-table.component";
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import {ReportTemplateService} from "./services/report-template.service";
     AddOrderComponent,
     DashboardComponent,
     SigninComponent,
-    OrderDetailComponent
+    OrderDetailComponent,
+    OrdersTableComponent
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,4 @@
-<a class="btn btn-primary new-template" (click)="modal.open()">Import Report Template</a>
+<a class="btn btn-default new-template" (click)="modal.open()">Import Report Template</a>
 
 <modal #modal>
   <modal-header [show-close]="true">
@@ -9,8 +9,8 @@
       <input type="file"><br>
       <input type="submit" value="Upload" (click)="modal.close()">
     </form>
-  </modal-body><!--
-  <modal-footer [show-default-buttons]="true"></modal-footer>-->
+  </modal-body>
+  <modal-footer [show-default-buttons]="true"></modal-footer>
 </modal>
 <table class="table table-striped table-hover">
   <thead>
