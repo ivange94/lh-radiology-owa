@@ -30,4 +30,8 @@ export class OrderDetailComponent implements OnInit {
   onChange(value: string) {
     console.log(value);
   }
+
+  goBack() {
+    this.location.back();
+  }
 }
