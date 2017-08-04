@@ -1,16 +1,19 @@
+import {Concept} from "./concept";
+import {Patient} from "./patient";
+import {User} from "./user";
 export class Order {
 
   uuid: string;
-  orderNumber: string;
   accessionNumber: number;
-  action: string;
   dateActivated: Date;
-  dateStopped: Date;
-  autoExpireDate: Date;
-  orderReasonNonCoded: string;
   urgency: string;
   scheduledDate: Date;
-  instructions: string;
-  commentToFulfiller: string;
   display: string;
+  concept: Concept;
+  patient: Patient;
+  orderer: User;
+  orderReason: Concept;
+  orderReasonNonCoded: string;
+  dateStopped: Date;
+  instructions: string;
 }

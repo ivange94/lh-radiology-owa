@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BrandComponent implements OnInit {
 
-  logoPath = '/assets/logo.png';
+  logoPath = '/openmrs/owa/radiology/assets/logo.png';
 
   constructor() { }
 

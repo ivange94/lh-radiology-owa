@@ -20,7 +20,7 @@ const routes: Routes = [
   ]},
   {path: 'signin', component: SigninComponent},
   {path: 'add-report', component: ReportAuthoringComponent},
-  {path: 'orders/:id', component: OrderDetailComponent}
+  {path: 'orders/:uuid', component: OrderDetailComponent}
 ]
 
 @NgModule({

@@ -5,6 +5,10 @@ import {OrderService} from "../../../services/order.service";
 
 import 'rxjs/add/operator/switchMap';
 import {Order} from "../../../models/order";
+import {HttpClient} from "@angular/common/http";
+import {Concept} from "../../../models/concept";
+import {Patient} from "../../../models/patient";
+import {User} from "../../../models/user";
 
 @Component({
   selector: 'app-view-order',
@@ -18,13 +22,20 @@ export class OrderDetailComponent implements OnInit {
   constructor(
     private orderService: OrderService,
     private route: ActivatedRoute,
-    private location: Location
+    private location: Location,
+    private http: HttpClient
   ) { }
 
   ngOnInit() {
-    this.route.paramMap
-      .switchMap((params: ParamMap) => this.orderService.getOrder(+params.get('id')))
-      .subscribe(order => this.order = order);
+    this.http.get<Order>(this.getUrl()).subscribe(
+      data => {
+        console.log(data);
+        this.order = data;
+      },
+      err => {
+        console.log(err);
+      }
+    );
   }
 
   onChange(value: string) {
@@ -33,5 +44,12 @@ export class OrderDetailComponent implements OnInit {
 
   goBack() {
     this.location.back();
+  }
+
+  getUrl() {
+    var uuid;
+    this.route.paramMap
+      .switchMap((params: ParamMap) => uuid = params.get('uuid')).subscribe();
+    return '/openmrs/ws/rest/v1/radiologyorder/' + uuid + '?v=full';
   }
 }

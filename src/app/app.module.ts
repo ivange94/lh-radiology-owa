@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { TinymceModule } from 'angular2-tinymce';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -25,6 +26,7 @@ import {ReportService} from "./services/report.service";
 import {Ng2Bs3ModalModule} from "ng2-bs3-modal/ng2-bs3-modal";
 import {ReportTemplateService} from "./services/report-template.service";
 import {OrdersTableComponent} from "./components/orders-table.component";
+import {CustomHttpClient} from "./CustomHttpClient";
 
 @NgModule({
   declarations: [
@@ -48,12 +50,15 @@ import {OrdersTableComponent} from "./components/orders-table.component";
   ],
   imports: [
     BrowserModule,
-    TinymceModule.withConfig({}),
+    TinymceModule.withConfig({
+      skin_url: '/openmrs/owa/radiology/assets/tinymce/skins/lightgray'
+    }),
     FormsModule,
     AppRoutingModule,
-    Ng2Bs3ModalModule
+    Ng2Bs3ModalModule,
+    HttpClientModule
   ],
-  providers: [OrderService, ReportService, ReportTemplateService],
+  providers: [OrderService, ReportService, ReportTemplateService, CustomHttpClient],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
