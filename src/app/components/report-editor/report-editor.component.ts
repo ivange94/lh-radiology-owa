@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-report-editor',
@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class ReportEditorComponent implements OnInit {
 
   content: string;
+
+  @Input() disable: boolean;
 
   constructor() { }
 

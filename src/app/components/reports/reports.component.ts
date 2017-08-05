@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {ReportService} from "../../services/report.service";
 import {Report} from "../../models/report";
+import {HttpClient} from "@angular/common/http";
 
 @Component({
   selector: 'app-reports',
@@ -10,13 +10,27 @@ import {Report} from "../../models/report";
 export class ReportsComponent implements OnInit {
 
   reports: Report[];
+  totalCount: number;
 
   constructor(
-    private reportService: ReportService
+    private http: HttpClient
   ) { }
 
   ngOnInit() {
-    this.reportService.getReports().then(reports => this.reports = reports);
+    this.http.get<ReportsResponse>('/openmrs/ws/rest/v1/radiologyreport?totalCount=true&limit=1&startIndex=0&v=full').subscribe(
+      data => {
+        this.reports = data.results;
+        this.totalCount = data.totalCount;
+      },
+      err => {
+        console.log('An error occured');
+      }
+    );
   }
 
+}
+
+interface ReportsResponse {
+  results: Report[];
+  totalCount: number;
 }

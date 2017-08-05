@@ -1,14 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Location } from '@angular/common';
-import {OrderService} from "../../../services/order.service";
 
 import 'rxjs/add/operator/switchMap';
 import {Order} from "../../../models/order";
 import {HttpClient} from "@angular/common/http";
-import {Concept} from "../../../models/concept";
-import {Patient} from "../../../models/patient";
-import {User} from "../../../models/user";
 
 @Component({
   selector: 'app-view-order',
@@ -20,7 +16,6 @@ export class OrderDetailComponent implements OnInit {
   order: Order;
 
   constructor(
-    private orderService: OrderService,
     private route: ActivatedRoute,
     private location: Location,
     private http: HttpClient

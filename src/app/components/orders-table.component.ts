@@ -28,7 +28,7 @@ import {HttpClient} from "@angular/common/http";
         <td>{{order.orderer.display}}</td>
         <td>{{order.scheduledDate | date}}</td>
         <td>{{order.dateActivated | date}}</td>
-        <td><a [routerLink]="['/orders', order.uuid]"><span class="glyphicon glyphicon-eye-open"></span></a></td>
+        <td><a [routerLink]="['/order', order.uuid]"><span class="glyphicon glyphicon-eye-open"></span></a></td>
       </tr>
       </tbody>
     </table>

@@ -27,6 +27,7 @@ import {Ng2Bs3ModalModule} from "ng2-bs3-modal/ng2-bs3-modal";
 import {ReportTemplateService} from "./services/report-template.service";
 import {OrdersTableComponent} from "./components/orders-table.component";
 import {CustomHttpClient} from "./CustomHttpClient";
+import {ReportDetailComponent} from "./components/reports/report-detail/report-detail.component";
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import {CustomHttpClient} from "./CustomHttpClient";
     DashboardComponent,
     SigninComponent,
     OrderDetailComponent,
-    OrdersTableComponent
+    OrdersTableComponent,
+    ReportDetailComponent
   ],
   imports: [
     BrowserModule,
