@@ -9,7 +9,7 @@
   </div>
   <div class="row">
     <div class="col-xs-12">
-      <app-report-editor></app-report-editor>
+      <app-report-editor [elementId]="'reportEditorId'" [readonly]="report?.status === 'COMPLETED'" [content]="report?.body"></app-report-editor>
     </div>
   </div>
 </div>

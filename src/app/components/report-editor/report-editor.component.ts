@@ -1,19 +1,36 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {AfterViewInit, Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-report-editor',
-  templateUrl: './report-editor.component.html',
-  styleUrls: ['./report-editor.component.css']
+  template: `<textarea id="{{elementId}}" rows="10" >{{content}}</textarea>`
 })
-export class ReportEditorComponent implements OnInit {
+export class ReportEditorComponent implements AfterViewInit, OnDestroy {
 
-  content: string;
+  @Input() elementId: string;
+  @Input() readonly : boolean;
+  @Input() content: string;
 
-  @Input() disable: boolean;
+  @Output() onEditorKeyup = new EventEmitter<any>();
 
-  constructor() { }
+  editor;
 
-  ngOnInit() {
+  ngAfterViewInit() {
+    tinymce.init({
+      selector: '#' + this.elementId,
+      skin_url: '/openmrs/owa/radiology/assets/tinymce/skins/lightgray',
+      readonly: this.readonly,
+      setup: editor => {
+        this.editor = editor;
+        editor.on('keyup', () => {
+          const content = editor.getContent();
+          this.onEditorKeyup.emit(content);
+        })
+      }
+    });
+  }
+
+  ngOnDestroy() {
+    tinymce.remove(this.editor);
   }
 
 }

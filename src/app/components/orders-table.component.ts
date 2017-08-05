@@ -1,6 +1,5 @@
 import {Component, Input, OnInit} from "@angular/core";
 import {Order} from "../models/order";
-import {CustomHttpClient} from "../CustomHttpClient";
 import {HttpClient} from "@angular/common/http";
 
 @Component({

@@ -21,12 +21,12 @@
     "@angular/platform-browser": "^4.0.0",
     "@angular/platform-browser-dynamic": "^4.0.0",
     "@angular/router": "^4.0.0",
-    "angular2-tinymce": "^2.1.2",
     "bootstrap": "^3.3.7",
     "core-js": "^2.4.1",
     "jquery": "^3.2.1",
     "ng2-bs3-modal": "^0.10.4",
     "rxjs": "^5.1.0",
+    "tinymce": "^4.6.5",
     "zone.js": "^0.8.4"
   },
   "devDependencies": {
