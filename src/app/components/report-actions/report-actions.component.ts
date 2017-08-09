@@ -2,8 +2,21 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-report-actions',
-  templateUrl: './report-actions.component.html',
-  styleUrls: ['./report-actions.component.css']
+  template: `
+    <div>
+      <div class="row">
+        <div class="col-xs-3">
+          <button class="btn btn-default">Draft</button>
+        </div>
+        <div class="col-xs-3">
+          <button class="btn btn-default">Approve</button>
+        </div>
+        <div class="col-xs-3">
+          <button class="btn btn-default">Discard</button>
+        </div>
+      </div>
+    </div>
+  `
 })
 export class ReportActionsComponent implements OnInit {
 

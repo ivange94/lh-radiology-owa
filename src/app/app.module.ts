@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { TinymceModule } from 'angular2-tinymce';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -27,6 +26,7 @@ import {Ng2Bs3ModalModule} from "ng2-bs3-modal/ng2-bs3-modal";
 import {ReportTemplateService} from "./services/report-template.service";
 import {OrdersTableComponent} from "./components/orders-table.component";
 import {ReportDetailComponent} from "./components/reports/report-detail/report-detail.component";
+import {SearchComponent} from "./components/search.component";
 
 @NgModule({
   declarations: [
@@ -47,7 +47,8 @@ import {ReportDetailComponent} from "./components/reports/report-detail/report-d
     SigninComponent,
     OrderDetailComponent,
     OrdersTableComponent,
-    ReportDetailComponent
+    ReportDetailComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

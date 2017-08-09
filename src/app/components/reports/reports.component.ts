@@ -4,8 +4,33 @@ import {HttpClient} from "@angular/common/http";
 
 @Component({
   selector: 'app-reports',
-  templateUrl: './reports.component.html',
-  styleUrls: ['./reports.component.css']
+  template: `
+    <table class="reports-table table table-striped table-hover">
+      <thead>
+      <tr>
+        <th>Radiology Order</th>
+        <th>Principal Results Interpreter</th>
+        <th>Date</th>
+        <th>Status</th>
+        <th>Action</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let report of reports">
+        <td>{{report?.radiologyOrder?.display}}</td>
+        <td>{{report?.principalResultsInterpreter?.display}}</td>
+        <td>{{report?.date | date}}</td>
+        <td>{{report?.status}}</td>
+        <td><a [routerLink]="['/report', report.uuid]"><span class="glyphicon glyphicon-eye-open"></span></a></td>
+      </tr>
+      </tbody>
+    </table>
+  `,
+  styles: [`
+    .reports-table {
+      margin-top: 50px;
+    }
+  `]
 })
 export class ReportsComponent implements OnInit {
 
