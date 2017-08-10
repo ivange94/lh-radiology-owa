@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 
 @Component({
@@ -54,6 +54,8 @@ export class SearchComponent implements OnInit{
 
   @Input() params: SearchParams[] = [];
 
+  @Output() notify: EventEmitter<string> = new EventEmitter<string>();
+
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
@@ -71,7 +73,6 @@ export class SearchComponent implements OnInit{
           url += ("&" + param.key + "=" + param.value)
         }
       }
-      console.log(url);
       this.http.get<SearchRes>(url).subscribe(data => {
         this.searchResults = data.results;
       });
@@ -79,9 +80,9 @@ export class SearchComponent implements OnInit{
   }
 
   select(item) {
-    console.log(item);
     this.query = item.display;
     this.searchResults = [];
+    this.notify.emit(item.uuid);
   }
 }
 

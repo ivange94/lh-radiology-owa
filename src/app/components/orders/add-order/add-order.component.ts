@@ -8,19 +8,19 @@ import { Component, OnInit } from '@angular/core';
         <div class="form-group">
           <label class="col-sm-2 control-label">Patient<span class="required">*</span></label>
           <div class="col-sm-10">
-            <app-search [baseUrl]="'/openmrs/ws/rest/v1/patient'" [placeholder]="'Patient'"></app-search>
+            <app-search (notify)="getPatientUuid($event)" [baseUrl]="'/openmrs/ws/rest/v1/patient'" [placeholder]="'Patient'"></app-search>
           </div>
         </div>
         <div class="form-group">
           <label class="col-sm-2 control-label">Imaging Procedure<span class="required">*</span></label>
           <div class="col-sm-10">
-            <app-search [baseUrl]="'/openmrs/ws/rest/v1/concept'" [placeholder]="'Concept'"></app-search>
+            <app-search (notify)="getImagingProcudureUuid($event)" [baseUrl]="'/openmrs/ws/rest/v1/concept'" [placeholder]="'Concept'"></app-search>
           </div>
         </div>
         <div class="form-group">
           <label class="col-sm-2 control-label">Reason (Coded) </label>
           <div class="col-sm-10">
-            <app-search [baseUrl]="'/openmrs/ws/rest/v1/concept'" [placeholder]="'Concept'"></app-search>
+            <app-search (notify)="getReasonConceptUuid($event)" [baseUrl]="'/openmrs/ws/rest/v1/concept'" [placeholder]="'Concept'"></app-search>
           </div>
         </div>
         <div class="form-group">
@@ -62,9 +62,9 @@ import { Component, OnInit } from '@angular/core';
           </div>
         </div>
         <div class="form-group">
-          <label for="orderer" class="col-sm-2 control-label">Orderer<span class="required">*</span></label>
+          <label class="col-sm-2 control-label">Orderer<span class="required">*</span></label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" id="orderer" placeholder="Provider name or ID">
+            <app-search (notify)="getProviderUuid($event)" [baseUrl]="'/openmrs/ws/rest/v1/provider'" [placeholder]="'Provider'"></app-search>
           </div>
         </div>
         <div class="form-group">
@@ -85,7 +85,6 @@ import { Component, OnInit } from '@angular/core';
     .add-order {
       width: 80%;
     }
-
   `
   ]
 })
@@ -94,6 +93,22 @@ export class AddOrderComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+
+  getPatientUuid(uuid) {
+    console.log(uuid);
+  }
+
+  getImagingProcudureUuid(uuid) {
+    console.log(uuid);
+  }
+
+  getReasonConceptUuid(uuid) {
+    console.log(uuid);
+  }
+
+  getProviderUuid(uuid) {
+    console.log(uuid);
   }
 
 }
