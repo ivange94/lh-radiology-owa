@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ReportTemplate} from "../../models/report-template";
-import {ReportTemplateService} from "../../services/report-template.service";
+import {HttpClient} from "@angular/common/http";
 
 @Component({
   selector: 'app-report-templates',
@@ -49,13 +49,22 @@ import {ReportTemplateService} from "../../services/report-template.service";
 export class ReportTemplatesComponent implements OnInit {
 
   reportTemplates: ReportTemplate[];
+  totalCount: number;
 
   constructor(
-    private reportTemplateService: ReportTemplateService
+    private http: HttpClient
   ) { }
 
   ngOnInit() {
-    this.reportTemplateService.getReportTemplates().then(reportTemplates => this.reportTemplates = reportTemplates);
+    this.http.get<Res>('/openmrs/ws/rest/v1/mrrtreporttemplate?v=full&totalCount=true').subscribe(data => {
+      this.reportTemplates = data.results;
+      this.totalCount = data.totalCount;
+    });
   }
 
+}
+
+interface Res {
+  results: ReportTemplate[];
+  totalCount: number;
 }
