@@ -31,11 +31,11 @@ import {HttpClient} from "@angular/common/http";
       </thead>
       <tbody>
       <tr *ngFor="let template of reportTemplates">
-        <td>{{template.templateId}}</td>
-        <td>{{template.dcTermsTitle}}</td>
-        <td>{{template.dcTermsCreator}}</td>
-        <td>{{template.dcTermsPublisher}}</td>
-        <td><a><span class="glyphicon glyphicon-eye-open"></span></a></td>
+        <td>{{template?.templateId}}</td>
+        <td>{{template?.dcTermsTitle}}</td>
+        <td>{{template?.dcTermsCreator}}</td>
+        <td>{{template?.dcTermsPublisher}}</td>
+        <td><a [routerLink]="['/reporttemplate', template?.uuid]"><span class="glyphicon glyphicon-eye-open"></span></a></td>
       </tr>
       </tbody>
     </table>

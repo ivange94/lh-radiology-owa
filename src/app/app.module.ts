@@ -27,6 +27,7 @@ import {ReportTemplateService} from "./services/report-template.service";
 import {OrdersTableComponent} from "./components/orders-table.component";
 import {ReportDetailComponent} from "./components/reports/report-detail/report-detail.component";
 import {SearchComponent} from "./components/search.component";
+import {ReportTemplateDetailsComponent} from "./components/report-template-details.component";
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import {SearchComponent} from "./components/search.component";
     OrderDetailComponent,
     OrdersTableComponent,
     ReportDetailComponent,
-    SearchComponent
+    SearchComponent,
+    ReportTemplateDetailsComponent
   ],
   imports: [
     BrowserModule,

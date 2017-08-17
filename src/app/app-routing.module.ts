@@ -9,6 +9,7 @@ import { SigninComponent } from './components/signin/signin.component';
 import { ReportAuthoringComponent } from './components/report-authoring/report-authoring.component'
 import { OrderDetailComponent } from './components/orders/order-detail/order-detail.component';
 import { ReportDetailComponent } from './components/reports/report-detail/report-detail.component';
+import { ReportTemplateDetailsComponent } from  './components/report-template-details.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'dashboard/orders', pathMatch: 'full'},
@@ -21,7 +22,8 @@ const routes: Routes = [
   {path: 'signin', component: SigninComponent},
   {path: 'add-report', component: ReportAuthoringComponent},
   {path: 'order/:uuid', component: OrderDetailComponent},
-  {path: 'report/:uuid', component: ReportDetailComponent}
+  {path: 'report/:uuid', component: ReportDetailComponent},
+  {path: 'reporttemplate/:uuid', component: ReportTemplateDetailsComponent}
 ]
 
 @NgModule({
