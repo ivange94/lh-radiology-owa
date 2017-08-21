@@ -68,17 +68,17 @@ To deploy your app, make sure you have a server running with the requirements st
 
 Go to Administration section and unver Open Web Apps Module click Manage Apps and you'll see a section to upload select and upload an app.
 
-![ManageApps](http://picpaste.com/pics/upload_app-DhdEpxYt.1503006648.png)
+![ManageApps](docs/images/upload_app.png)
 
 Click browse and select radiology.zip then click upload.
 
 If your app is uploaded successfully you'll see an entry for it under the uploaded apps
 
-![LibreHealth Radiology App](http://picpaste.com/pics/Screen_Shot_2017-08-17_at_10.54.17_PM-urDjANia.1503006923.png)
+![LibreHealth Radiology App](docs/images/lh_radiology_app.png)
 
 Click on your app to use it
 
-![Radiology Dashboard](http://picpaste.com/pics/Screen_Shot_2017-08-17_at_10.56.46_PM-sfYrpxq9.1503007068.png)
+![Radiology Dashboard](docs/images/radiology_dashboard.png)
 
 ## Contributing
 
