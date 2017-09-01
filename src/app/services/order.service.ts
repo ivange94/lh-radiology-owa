@@ -28,6 +28,16 @@ export class OrderService {
       .catch(this.handleError);
   }
 
+  get(uuid: string): Observable<Order> {
+    let params = new HttpParams();
+    params.set('v', 'full');
+    return this.http.get(this.baseUrl + "/" + uuid, {
+      params
+    })
+      .map(res => res as Order || {})
+      .catch(this.handleError);
+  }
+
   private handleError(error: any): Promise<any> {
     console.log('An error occured ', error);
     return Promise.reject(error.message || error);

@@ -3,7 +3,7 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 
 import 'rxjs/add/operator/switchMap';
 import {Order} from "../../../models/order";
-import {HttpClient} from "@angular/common/http";
+import {OrderService} from "../../../services/order.service";
 
 @Component({
   selector: 'app-view-order',
@@ -62,24 +62,25 @@ export class OrderDetailComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private http: HttpClient
+    private orderService: OrderService
   ) { }
 
   ngOnInit() {
-    this.http.get<Order>(this.getUrl()).subscribe(
+    let uuid = this.getUuid();
+    this.orderService.get(uuid).subscribe(
       data => {
         this.order = data;
       },
       err => {
-        console.log(err);
+        console.log(err.error.message);
       }
     );
   }
 
-  getUrl() {
+  getUuid() {
     let uuid;
     this.route.paramMap
       .switchMap((params: ParamMap) => uuid = params.get('uuid')).subscribe();
-    return '/openmrs/ws/rest/v1/radiologyorder/' + uuid + '?v=full';
+    return uuid;
   }
 }
