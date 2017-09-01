@@ -77,7 +77,7 @@ export class OrderDetailComponent implements OnInit {
     );
   }
 
-  getUuid() {
+  private getUuid() {
     let uuid;
     this.route.paramMap
       .switchMap((params: ParamMap) => uuid = params.get('uuid')).subscribe();
