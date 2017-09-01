@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
-import { Location } from '@angular/common';
 
 import 'rxjs/add/operator/switchMap';
 import {Order} from "../../../models/order";
@@ -11,7 +10,7 @@ import {HttpClient} from "@angular/common/http";
   template:
   `
     <div class="container">
-      <button class="btn btn-default dashboard-btn" (click)="goBack()"><span class="glyphicon glyphicon-chevron-left"></span>Back</button>
+      <a class="btn btn-primary" routerLink="/dashboard/orders"><span class="glyphicon glyphicon-chevron-left"></span>Back</a><br><br>
       <div class="panel panel-default">
         <div class="panel-heading">
           <h3 class="panel-title">{{order?.patient?.display}} | Radiology Order </h3>
@@ -55,10 +54,6 @@ import {HttpClient} from "@angular/common/http";
       margin-top: 20px;
     }
 
-    .dashboard-btn {
-      margin-bottom: 10px;
-    }
-
   `]
 })
 export class OrderDetailComponent implements OnInit {
@@ -67,14 +62,12 @@ export class OrderDetailComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private location: Location,
     private http: HttpClient
   ) { }
 
   ngOnInit() {
     this.http.get<Order>(this.getUrl()).subscribe(
       data => {
-        console.log(data);
         this.order = data;
       },
       err => {
@@ -83,16 +76,8 @@ export class OrderDetailComponent implements OnInit {
     );
   }
 
-  onChange(value: string) {
-    console.log(value);
-  }
-
-  goBack() {
-    this.location.back();
-  }
-
   getUrl() {
-    var uuid;
+    let uuid;
     this.route.paramMap
       .switchMap((params: ParamMap) => uuid = params.get('uuid')).subscribe();
     return '/openmrs/ws/rest/v1/radiologyorder/' + uuid + '?v=full';

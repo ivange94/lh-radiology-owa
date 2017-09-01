@@ -29,12 +29,8 @@ import {Order} from "../../models/order";
 })
 export class OrdersComponent implements OnInit {
 
-  orders: Order[];
-
-  constructor(private orderService: OrderService) { }
-
   ngOnInit() {
-    this.orderService.getOrders().then(orders => this.orders = orders);
+
   }
 
 }
