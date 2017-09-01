@@ -1,6 +1,8 @@
 import {Component, Input, OnInit} from "@angular/core";
 import {Order} from "../models/order";
 import {HttpClient} from "@angular/common/http";
+import {OrderService} from "../services/order.service";
+import {orders} from "../mock-db";
 
 @Component({
   selector: 'app-orders-table',
@@ -36,26 +38,16 @@ import {HttpClient} from "@angular/common/http";
 export class OrdersTableComponent implements OnInit{
 
   orders: Order[];
-  totalCount: number;
+  startIndex: number = 0;
 
   constructor(
-    private http: HttpClient
+    private orderService: OrderService
   ) {}
 
   ngOnInit(): void {
-    this.http.get<OrdersResponse>('/openmrs/ws/rest/v1/radiologyorder?totalCount=true&limit=10&startIndex=0&v=full').subscribe(
-      data => {
-        this.orders = data.results;
-        this.totalCount = data.totalCount;
-      },
-      err => {
-        console.log(err.error.message);
-      }
-    );
+    this.orderService.fetch(this.startIndex, 10).subscribe(orders => {
+      this.orders = orders;
+      this.startIndex = orders.length;
+    });
   }
-}
-
-interface OrdersResponse {
-  results: Order[];
-  totalCount: number;
 }
