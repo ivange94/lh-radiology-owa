@@ -1,8 +1,6 @@
-import {Component, Input, OnInit} from "@angular/core";
+import {Component, OnInit} from "@angular/core";
 import {Order} from "../models/order";
-import {HttpClient} from "@angular/common/http";
 import {OrderService} from "../services/order.service";
-import {orders} from "../mock-db";
 
 @Component({
   selector: 'app-orders-table',
