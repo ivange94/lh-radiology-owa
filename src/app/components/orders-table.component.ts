@@ -45,7 +45,6 @@ export class OrdersTableComponent implements OnInit{
   ngOnInit(): void {
     this.orderService.fetch(this.startIndex, 10).subscribe(orders => {
       this.orders = orders;
-      this.startIndex = orders.length;
     });
   }
 }
