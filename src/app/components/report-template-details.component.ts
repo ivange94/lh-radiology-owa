@@ -1,7 +1,7 @@
 import {Component, OnInit} from "@angular/core";
-import {HttpClient} from "@angular/common/http";
 import {ActivatedRoute, ParamMap} from "@angular/router";
 import {ReportTemplate} from "../models/report-template";
+import {ReportTemplateService} from "../services/report-template.service";
 
 @Component({
   selector: 'app-repport-template-details',
@@ -49,19 +49,21 @@ export class ReportTemplateDetailsComponent implements OnInit {
   reportTemplate: ReportTemplate;
 
   constructor(
-    private http: HttpClient,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private reportTemplateService: ReportTemplateService
   ) {}
 
   ngOnInit() {
-    this.http.get<ReportTemplate>(this.getUrl()).subscribe( data => this.reportTemplate = data);
+    this.reportTemplateService.get(this.getUuid()).subscribe(data => {
+      this.reportTemplate = data;
+    });
   }
 
-  getUrl() {
+  private getUuid() {
     let uuid;
     this.route.paramMap
       .switchMap((params: ParamMap) => uuid = params.get('uuid')).subscribe();
-    return '/openmrs/ws/rest/v1/mrrtreporttemplate/' + uuid + '?v=full';
+    return uuid;
   }
 
 }
