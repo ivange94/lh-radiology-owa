@@ -24,8 +24,7 @@ export class OrderService {
     return this.http.get(this.baseUrl, {
       params
     })
-      .map(res => res['results'] as Order[] || [])
-      .catch(this.handleError);
+      .map(res => res['results'] as Order[] || []);
   }
 
   get(uuid: string): Observable<Order> {
@@ -34,12 +33,6 @@ export class OrderService {
     return this.http.get(this.baseUrl + "/" + uuid, {
       params
     })
-      .map(res => res as Order || {})
-      .catch(this.handleError);
-  }
-
-  private handleError(error: any): Promise<any> {
-    console.log('An error occured ', error);
-    return Promise.reject(error.message || error);
+      .map(res => res as Order || {});
   }
 }
