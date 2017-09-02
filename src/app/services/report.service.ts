@@ -21,4 +21,14 @@ export class ReportService {
     })
       .map(res => res['results'] as Report[] || [] );
   }
+
+  get(uuid: string): Observable<Report> {
+    let params = new HttpParams();
+    params.set('v', 'full');
+
+    return this.http.get(this.baseUrl + "/" + uuid, {
+      params
+    })
+      .map(res => res as Report || {});
+  }
 }
