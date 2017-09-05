@@ -24,7 +24,6 @@ import { OrderDetailComponent } from './components/orders/order-detail/order-det
 import {ReportService} from "./services/report.service";
 import {Ng2Bs3ModalModule} from "ng2-bs3-modal/ng2-bs3-modal";
 import {ReportTemplateService} from "./services/report-template.service";
-import {OrdersTableComponent} from "./components/orders-table.component";
 import {ReportDetailComponent} from "./components/reports/report-detail/report-detail.component";
 import {SearchComponent} from "./components/search.component";
 import {ReportTemplateDetailsComponent} from "./components/report-template-details.component";
@@ -47,7 +46,6 @@ import {ReportTemplateDetailsComponent} from "./components/report-template-detai
     DashboardComponent,
     SigninComponent,
     OrderDetailComponent,
-    OrdersTableComponent,
     ReportDetailComponent,
     SearchComponent,
     ReportTemplateDetailsComponent
