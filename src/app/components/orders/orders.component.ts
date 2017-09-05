@@ -17,7 +17,14 @@ import {Order} from "../../models/order";
       </modal-body>
       <modal-footer [show-default-buttons]="true"></modal-footer>
     </modal>
-    <app-orders-table></app-orders-table>
+    <div class="panel panel-primary box">
+      <div class="panel-heading">
+        <h3 class="panel-title">Radiology Orders</h3>
+      </div>
+      <div class="panel-body">
+        <app-orders-table></app-orders-table>
+      </div>
+    </div>
   `,
   styles: [
     `

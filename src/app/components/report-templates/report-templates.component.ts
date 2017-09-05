@@ -19,26 +19,33 @@ import {ReportTemplateService} from "../../services/report-template.service";
       </modal-body>
       <modal-footer [show-default-buttons]="true"></modal-footer>
     </modal>
-    <table class="table table-striped table-hover">
-      <thead>
-      <tr>
-        <th>Id</th>
-        <th>Title</th>
-        <th>Creator</th>
-        <th>Publisher</th>
-        <th>Action</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr *ngFor="let template of reportTemplates">
-        <td>{{template?.templateId}}</td>
-        <td>{{template?.dcTermsTitle}}</td>
-        <td>{{template?.dcTermsCreator}}</td>
-        <td>{{template?.dcTermsPublisher}}</td>
-        <td><a [routerLink]="['/reporttemplate', template?.uuid]"><span class="glyphicon glyphicon-eye-open"></span></a></td>
-      </tr>
-      </tbody>
-    </table>
+    <div class="panel panel-primary box">
+      <div class="panel-heading">
+        <h3 class="panel-title">Report Templates</h3>
+      </div>
+      <div class="panel-body">
+        <table class="table table-striped table-hover">
+          <thead>
+          <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Creator</th>
+            <th>Publisher</th>
+            <th>Action</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let template of reportTemplates">
+            <td>{{template?.templateId}}</td>
+            <td>{{template?.dcTermsTitle}}</td>
+            <td>{{template?.dcTermsCreator}}</td>
+            <td>{{template?.dcTermsPublisher}}</td>
+            <td><a [routerLink]="['/reporttemplate', template?.uuid]"><span class="glyphicon glyphicon-eye-open"></span></a></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
   `,
   styles: [`
     .new-template {
